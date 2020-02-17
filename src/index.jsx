@@ -126,7 +126,7 @@ export default class ModalVideo extends React.Component {
                 <div className={this.props.classNames.modalVideoInner}>
                   <div className={this.props.classNames.modalVideoIframeWrap} style={style}>
                     <button className={this.props.classNames.modalVideoCloseBtn} aria-label={this.props.aria.dismissBtnMessage} ref={node => { this.modalbtn = node; }} onKeyDown={this.updateFocus} />
-                    <iframe width='460' height='230' src={this.getVideoUrl(this.props, this.props.videoId)} frameBorder='0' allowFullScreen={this.props.allowFullScreen} tabIndex='-1' />
+                    <iframe id={this.props.id} width='460' height='230' src={this.getVideoUrl(this.props, this.props.videoId)} frameBorder='0' allowFullScreen={this.props.allowFullScreen} tabIndex='-1' />
                   </div>
                 </div>
               </div>
@@ -138,6 +138,7 @@ export default class ModalVideo extends React.Component {
 }
 
 ModalVideo.defaultProps = {
+  id: 'video-player',
   channel: 'youtube',
   isOpen: false,
   youtube: {
